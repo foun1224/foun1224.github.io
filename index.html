@@ -1,308 +1,128 @@
-<!doctype html>
-<html lang="zh-Hant">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sean's GitHub Pages Hub</title>
-    <meta name="description" content="A central hub for foun1224's public GitHub Pages services.">
-    <style>
-      :root {
-        color-scheme: light;
-        --bg: #f7f8fa;
-        --surface: #ffffff;
-        --surface-strong: #111827;
-        --text: #172033;
-        --muted: #657084;
-        --line: #d9dee8;
-        --accent: #2563eb;
-        --accent-strong: #1d4ed8;
-        --shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
-      }
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>foun1224 — Projects</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      * {
-        box-sizing: border-box;
-      }
+    body {
+      background: #17191E;
+      color: #C9CDD8;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        background: var(--bg);
-        color: var(--text);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.5;
-      }
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
 
-      a {
-        color: inherit;
-      }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #E8EAF0;
+      letter-spacing: -0.5px;
+    }
 
-      .page {
-        width: min(1120px, calc(100% - 32px));
-        margin: 0 auto;
-        padding: 40px 0;
-      }
+    header p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #6B7280;
+    }
 
-      .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        margin-bottom: 44px;
-      }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
 
-      .brand {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-      }
+    .card {
+      background: #22242C;
+      border: 1px solid #2E3240;
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-      .brand strong {
-        font-size: 18px;
-        letter-spacing: 0;
-      }
+    .card:hover {
+      border-color: #5C6BC0;
+      transform: translateY(-2px);
+    }
 
-      .brand span {
-        color: var(--muted);
-        font-size: 14px;
-      }
+    .card-icon {
+      font-size: 1.8rem;
+    }
 
-      .github-link {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        padding: 10px 14px;
-        color: var(--text);
-        font-size: 14px;
-        font-weight: 700;
-        text-decoration: none;
-        background: var(--surface);
-      }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #E8EAF0;
+    }
 
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        align-items: end;
-        gap: 24px;
-        margin-bottom: 28px;
-      }
+    .card-desc {
+      font-size: 0.875rem;
+      color: #6B7280;
+      line-height: 1.5;
+    }
 
-      h1 {
-        max-width: 760px;
-        margin: 0;
-        color: var(--surface-strong);
-        font-size: clamp(36px, 7vw, 72px);
-        line-height: 0.98;
-        letter-spacing: 0;
-      }
+    .card-url {
+      font-size: 0.75rem;
+      color: #4A5568;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid #2E3240;
+      word-break: break-all;
+    }
 
-      .lead {
-        max-width: 620px;
-        margin: 18px 0 0;
-        color: var(--muted);
-        font-size: 18px;
-      }
+    footer {
+      margin-top: 64px;
+      font-size: 0.8rem;
+      color: #3A3F4F;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>foun1224</h1>
+    <p>GitHub Pages Projects</p>
+  </header>
 
-      .meta {
-        display: grid;
-        gap: 8px;
-        min-width: 180px;
-        border-left: 3px solid var(--accent);
-        padding-left: 16px;
-      }
+  <div class="grid">
+    <a class="card" href="https://foun1224.github.io/bible-reader/" target="_blank" rel="noopener">
+      <div class="card-icon">📖</div>
+      <div class="card-title">Bible Reader</div>
+      <div class="card-desc">CKJV 聖經閱讀器，支援章節導覽與深色模式。</div>
+      <div class="card-url">foun1224.github.io/bible-reader/</div>
+    </a>
 
-      .meta span {
-        color: var(--muted);
-        font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
+    <a class="card" href="https://foun1224.github.io/ai-pet-web/" target="_blank" rel="noopener">
+      <div class="card-icon">🐾</div>
+      <div class="card-title">AI Pet Web</div>
+      <div class="card-desc">AI 寵物互動網頁應用。</div>
+      <div class="card-url">foun1224.github.io/ai-pet-web/</div>
+    </a>
 
-      .meta strong {
-        color: var(--surface-strong);
-        font-size: 28px;
-      }
+    <a class="card" href="https://foun1224.github.io/Invest_Analyze/" target="_blank" rel="noopener">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Invest Analyze</div>
+      <div class="card-desc">投資分析工具，視覺化財務數據。</div>
+      <div class="card-url">foun1224.github.io/Invest_Analyze/</div>
+    </a>
+  </div>
 
-      .services {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: 32px;
-      }
-
-      .service {
-        display: flex;
-        min-height: 260px;
-        flex-direction: column;
-        justify-content: space-between;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        padding: 22px;
-        background: var(--surface);
-        box-shadow: var(--shadow);
-        text-decoration: none;
-        transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
-      }
-
-      .service:hover,
-      .service:focus-visible {
-        border-color: rgba(37, 99, 235, 0.65);
-        box-shadow: 0 20px 55px rgba(37, 99, 235, 0.14);
-        transform: translateY(-2px);
-      }
-
-      .service:focus-visible {
-        outline: 3px solid rgba(37, 99, 235, 0.25);
-        outline-offset: 3px;
-      }
-
-      .service h2 {
-        margin: 0 0 10px;
-        color: var(--surface-strong);
-        font-size: 24px;
-        letter-spacing: 0;
-      }
-
-      .service p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .service-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        margin-top: 28px;
-        color: var(--accent);
-        font-weight: 800;
-      }
-
-      .badge {
-        border-radius: 999px;
-        padding: 5px 10px;
-        background: #eff6ff;
-        color: var(--accent-strong);
-        font-size: 12px;
-      }
-
-      footer {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        margin-top: 40px;
-        border-top: 1px solid var(--line);
-        padding-top: 20px;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      footer a {
-        color: var(--accent-strong);
-        font-weight: 700;
-        text-decoration: none;
-      }
-
-      @media (max-width: 860px) {
-        .hero {
-          grid-template-columns: 1fr;
-        }
-
-        .services {
-          grid-template-columns: 1fr;
-        }
-
-        .service {
-          min-height: 210px;
-        }
-      }
-
-      @media (max-width: 560px) {
-        .page {
-          width: min(100% - 24px, 1120px);
-          padding: 24px 0;
-        }
-
-        .topbar,
-        footer {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        h1 {
-          font-size: 40px;
-        }
-
-        .lead {
-          font-size: 16px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main class="page">
-      <header class="topbar" aria-label="Site header">
-        <div class="brand">
-          <strong>Sean Chen</strong>
-          <span>GitHub Pages services by foun1224</span>
-        </div>
-        <a class="github-link" href="https://github.com/foun1224">GitHub Profile</a>
-      </header>
-
-      <section class="hero" aria-labelledby="page-title">
-        <div>
-          <h1 id="page-title">Sean's GitHub Pages Hub</h1>
-          <p class="lead">
-            A single entry point for the public tools and experiments currently
-            served through GitHub Pages.
-          </p>
-        </div>
-        <div class="meta" aria-label="Service count">
-          <span>Active Pages</span>
-          <strong>3</strong>
-        </div>
-      </section>
-
-      <section class="services" aria-label="GitHub Pages services">
-        <a class="service" href="https://foun1224.github.io/ai-pet-web/">
-          <div>
-            <h2>AI Pet Web</h2>
-            <p>Public GitHub Pages service for the AI pet web project.</p>
-          </div>
-          <div class="service-footer">
-            <span>Open service</span>
-            <span class="badge">Live</span>
-          </div>
-        </a>
-
-        <a class="service" href="https://foun1224.github.io/bible-reader/">
-          <div>
-            <h2>Bible Reader</h2>
-            <p>Browser-based reader hosted from the bible-reader repository.</p>
-          </div>
-          <div class="service-footer">
-            <span>Open service</span>
-            <span class="badge">Live</span>
-          </div>
-        </a>
-
-        <a class="service" href="https://foun1224.github.io/Invest_Analyze/">
-          <div>
-            <h2>Invest Analyze</h2>
-            <p>
-              Public investment analysis page hosted from the Invest_Analyze
-              repository.
-            </p>
-          </div>
-          <div class="service-footer">
-            <span>Open service</span>
-            <span class="badge">Live</span>
-          </div>
-        </a>
-      </section>
-
-      <footer>
-        <span>Inventory checked on 2026-07-05 UTC.</span>
-        <a href="https://github.com/foun1224/foun1224.github.io">View source</a>
-      </footer>
-    </main>
-  </body>
+  <footer>github.com/foun1224</footer>
+</body>
 </html>
